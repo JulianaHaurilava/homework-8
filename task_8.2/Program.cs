@@ -12,20 +12,22 @@ namespace task_8._2
         /// <returns></returns>
         static Dictionary<string, string> AddNewContacts(Dictionary<string, string> phoneBook)
         {
+            string fullName, phoneNumber;
             Console.WriteLine("Ввод будет продолжаться, пока не будет введена пустая строка.");
             while (true)
             {
                 Console.WriteLine("\nВведите информацию о новом контакте");
 
                 Console.WriteLine("Введите Ф.И.О: ");
-                string fullName = Console.ReadLine();
+                fullName = Console.ReadLine();
                 if (fullName == "") break;
 
                 Console.WriteLine("Введите номер телефона: ");
-                string phoneNumber = Console.ReadLine();
+                phoneNumber = Console.ReadLine();
                 if (phoneNumber == "") break;
 
-                phoneBook.Add(phoneNumber, fullName);
+                if (!phoneBook.ContainsKey(phoneNumber)) phoneBook.Add(phoneNumber, fullName);
+                else Console.WriteLine("Контакт с введенным номером телефона уже добавлен.");
             }
             return phoneBook;
         }
@@ -54,7 +56,7 @@ namespace task_8._2
             string phoneNumber = Console.ReadLine();
 
             string foundName = FindContact(phoneBook, phoneNumber);
-            if (foundName != "") Console.WriteLine(foundName);
+            if (foundName != "") Console.WriteLine($"Ф.И.О: {foundName}");
             else Console.WriteLine("Контакта с введенным номером не существует.");
         }
     }

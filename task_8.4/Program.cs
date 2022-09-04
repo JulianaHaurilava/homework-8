@@ -5,8 +5,13 @@ namespace task_8._4
 {
     class Program
     {
+        /// <summary>
+        /// Получает информацию о новом контакте
+        /// </summary>
         static void SetContactInfo()
         {
+            Console.WriteLine("Введите информацию о новом контакте\n");
+
             Console.WriteLine("Введите Ф.И.О.");
             string fullName = Console.ReadLine();
             Console.WriteLine("Введите название улицы");
@@ -23,6 +28,15 @@ namespace task_8._4
             AddNewContactToXML(fullName, streetName, houseNumber, flatNumber, mobilePhone, flatPhone);
         }
 
+        /// <summary>
+        /// Записывает информацию о контакте в XML файл
+        /// </summary>
+        /// <param name="fullName"></param>
+        /// <param name="streetName"></param>
+        /// <param name="houseNumber"></param>
+        /// <param name="flatNumber"></param>
+        /// <param name="mobilePhone"></param>
+        /// <param name="flatPhone"></param>
         static void AddNewContactToXML(string fullName, string streetName, int houseNumber,
                                        int flatNumber, long mobilePhone, int flatPhone)
         {

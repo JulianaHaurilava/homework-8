@@ -24,14 +24,14 @@ namespace task_8._1
         /// <param name="numbers"></param>
         /// <param name="maxRandomValue"></param>
         /// <returns></returns>
-        static List<int> InitializeList(List<int> numbers, int maxRandomValue)
+        static List<int> InitializeList(List<int> numbers, int minRandomValue, int maxRandomValue)
         {
             Random randomizer = new Random();
             int sizeOfList = numbers.Capacity;
 
             for (int i = 0; i < sizeOfList; i++)
             {
-                numbers.Add(randomizer.Next(maxRandomValue + 1));
+                numbers.Add(randomizer.Next(minRandomValue, maxRandomValue + 1));
             }
             return numbers;
         }
@@ -58,10 +58,10 @@ namespace task_8._1
 
         static void Main(string[] args)
         {
-            int maxRandomValue = 100, sizeOfList = 100;
+            int maxRandomValue = 100, minRandomValue = 0, sizeOfList = 100;
             List<int> numbers = new List<int>(sizeOfList);
 
-            numbers = InitializeList(numbers, maxRandomValue);
+            numbers = InitializeList(numbers, minRandomValue, maxRandomValue);
 
             Console.WriteLine("Первоначальная коллекция");
             PrintAllNumbers(numbers);

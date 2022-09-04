@@ -5,6 +5,11 @@ namespace task_8._3
 {
     class Program
     {
+        /// <summary>
+        /// Добавляет новые элементы в HashSet
+        /// </summary>
+        /// <param name="numbers"></param>
+        /// <returns></returns>
         static HashSet<int> AddNewElements(HashSet<int> numbers)
         {
             Console.WriteLine("Ввод будет продолжаться, пока не будет введена пустая строка.");
