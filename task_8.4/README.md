@@ -29,7 +29,7 @@
 ```
 
 ## Советы и рекомендации
-Заполняйте XElement в ходе заполнения данных. Изучите возможности XElement в документации Microsoft.
+Заполняйте [XElement](https://docs.microsoft.com/en-us/dotnet/api/system.xml.linq.xelement?view=net-6.0) в ходе заполнения данных. Изучите возможности XElement в документации Microsoft.
 
 
 
